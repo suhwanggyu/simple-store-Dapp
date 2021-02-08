@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>경매 시스템</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.37/dist/web3.min.js"></script>
+		<script src="/javascripts/web3.js"></script>
+	</head>
+	<body>
+		<br><br><br>
+
+		<div id="main">
+			<div class="inner">
+				<div class="row gtr-200">
+					<div class="col-6">
+						<h2>Identity </h2>
+						<h4>Key  :  <a id="address"><%= address %></a></h4>
+						<h4>Ether  :  <a id="balanceAmount"><script type="text/javascript">getBalance();</script></a></h4> 
+						<h4>Name  :  <a id="name"><script type="text/javascript">getName();</script></a></h4>
+						<form method="get" action="#">
+							<h4>change name</h4>
+							<input type="text" name="change_name" id="change_name" value="" placeholder="Enter user name" /><br>
+							<button type="submit" class="primary" onclick="registerName()">change name</button>
+						</form>
+						<form method="post" action="#">
+							<h4>change user</h4>
+							<input type="text" name="private_key" id="private_key" value="" placeholder="Enter ethereum key" /><br>
+							<button type="submit" class="primary" onclick="">change user</button>
+						</form>
+					</div>
+				</div>
+				<hr class="major">
+
+				<div class="row gtr-200">
+					<div class ="col-6 col-12-medium">
+						<h2>Register for My Item</h2>
+						<form method="get" action="#">
+							<div class="row gtr-uniform">
+								<div class="col-6 col-12-xsmall">
+									<h4>Item</h4>
+									<input type="text" name="Item" id="Item" value="" placeholder="Item" /><br>
+								</div>
+							</div>
+							<div class="col-12">
+								<ul class="actions">
+									<li><button type="submit" class="primary" onclick="registerForMyItem()" />register</li>
+									<li><input type="reset" value="reset" /></li>
+								</ul>
+							</div>
+						</form>
+					</div>
+
+					<div class ="col-6 col-12-medium">
+						<h2>My Items</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Item</th>
+								</tr>
+							</thead>
+							<tbody id="myItems">
+							</tbody>
+						</table>
+					</div>
+
+					<div class ="col-6 col-12-medium">
+						<h2>Register Auction Item</h2>
+						<form method="get" action="#">
+							<div class="row gtr-uniform">
+								<div class="col-12">
+									<select name="demo-category" id="myitems-category">
+									</select>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<h4>starting bid price : </h4>
+									<input type="text" name="startingBidPrice" id="startingBidPrice" value="" placeholder="price" />
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<h4>upper limit price : </h4>
+									<input type="text" name="upperLimitPrice" id="upperLimitPrice" value="" placeholder="price" />
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<h4>due date : YYYY/MM/DD HH:MM:SS</h4>
+									<input type="text" name="dueDate" id="dueDate" value="" placeholder="date" />
+								</div>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Register" class="primary" onclick="registerAuctionItem()" /></li>
+										<li><input type="reset" value="reset" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+
+
+					<div class ="col-6 col-12-medium">
+						<h2>Auction bidding</h2>
+						<form method="get" action="#">
+							<div class="row gtr-uniform">
+								<div class="col-12">
+									<select name="demo-category" id="auction-category">
+									</select>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<h4>bid price : </h4>
+									<input type="text" name="bidPrice" id="bidPrice" value="" placeholder="price" />
+								</div>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Bid" class="primary" onclick="auctionBidding()"/></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+				<hr class="major">
+
+				<div class="row gtr-200">
+					<div class ="col-6 col-12-medium">
+						<h3>Registered auction items</h3>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Item</th>
+										<th>Owner</th>
+										<th>Bid price</th>
+										<th>Upper limit price</th>
+										<th>Due date</th>
+									</tr>
+								</thead>
+								<tbody id="registeredCars">
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class ="col-6 col-12-medium">
+						<h3>Closed auction items</h3>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Item</th>
+										<th>Owner</th>
+										<th>Winning bid</th>
+									</tr>
+								</thead>
+								<tbody id="carsOnSale">
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
