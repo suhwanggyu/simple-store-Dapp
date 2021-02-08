@@ -11,5 +11,5 @@
 문서로 프로젝트의 구현과 상세내역을 정리하였으니,
 
 자세한 내용은
-[디자인 및 구현 문서] (https://github.com/suhwanggyu/simple-store-Dapp/blob/main/%EB%94%94%EC%9E%90%EC%9D%B8%EB%8B%A4%ED%81%90%EB%A8%BC%ED%8A%B8.pdf)
+[디자인 및 구현 문서](https://github.com/suhwanggyu/simple-store-Dapp/blob/main/%EB%94%94%EC%9E%90%EC%9D%B8%EB%8B%A4%ED%81%90%EB%A8%BC%ED%8A%B8.pdf)
 를 확인 부탁드립니다.
